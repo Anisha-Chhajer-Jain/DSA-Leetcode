@@ -1,29 +1,34 @@
-class Solution {
-public:
-    int divide(int dividend, int divisor) {
+// #include <iostream>
+// using namespace std;
 
-        // Special overflow case
-        if (dividend == INT_MIN && divisor == -1) {
-            return INT_MAX;
-        }
+// class Solution {
+// public:
+//     int divide(int dividend, int divisor) {
 
-        long long a = abs((long long)dividend);
-        long long b = abs((long long)divisor);
+//         int count = 0;
 
-        int count = 0;
+//         int sum = divisor;
 
-        // Keep subtracting divisor
-        while (a >= b) {
-            a = a - b;
-            count++;
-        }
+//         // Keep adding divisor until it becomes greater
+//         while (sum <= dividend) {
 
-        // Make answer negative if signs are different
-        if ((dividend < 0 && divisor > 0) ||
-            (dividend > 0 && divisor < 0)) {
-            count = -count;
-        }
+//             sum = sum + divisor;
 
-        return count;
-    }
-};
+//             count++;
+//         }
+
+//         return count;
+//     }
+// };
+
+// int main() {
+
+//     Solution s;
+
+//     int dividend = 10;
+//     int divisor = 2;
+
+//     cout << s.divide(dividend, divisor);
+
+//     return 0;
+// }

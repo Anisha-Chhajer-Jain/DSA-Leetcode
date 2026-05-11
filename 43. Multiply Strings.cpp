@@ -1,38 +1,59 @@
-class Solution {
-public:
-    string multiply(string num1, string num2) {
-        
-        // If any number is 0
-        if(num1 == "0" || num2 == "0")
-            return "0";
+// #include <iostream>
+// #include <vector>
+// using namespace std;
 
-        int n = num1.size();
-        int m = num2.size();
+// class Solution {
+// public:
+//     string multiply(string num1, string num2) {
 
-        vector<int> ans(n + m, 0);
+//         // If any number is 0
+//         if (num1 == "0" || num2 == "0") {
+//             return "0";
+//         }
 
-        // Multiply digits from back
-        for(int i = n - 1; i >= 0; i--) {
-            for(int j = m - 1; j >= 0; j--) {
+//         int n = num1.size();
+//         int m = num2.size();
 
-                int mul = (num1[i] - '0') * (num2[j] - '0');
+//         vector<int> ans(n + m, 0);
 
-                int sum = mul + ans[i + j + 1];
+//         // Multiply from back
+//         for (int i = n - 1; i >= 0; i--) {
 
-                ans[i + j + 1] = sum % 10; // digit
-                ans[i + j] += sum / 10;    // carry
-            }
-        }
+//             for (int j = m - 1; j >= 0; j--) {
 
-        string result = "";
+//                 int mul = (num1[i] - '0') * (num2[j] - '0');
 
-        // Convert vector to string
-        for(int x : ans) {
-            if(!(result.empty() && x == 0)) {
-                result += to_string(x);
-            }
-        }
+//                 int sum = mul + ans[i + j + 1];
 
-        return result;
-    }
-};
+//                 ans[i + j + 1] = sum % 10;
+
+//                 ans[i + j] = ans[i + j] + sum / 10;
+//             }
+//         }
+
+//         string result = "";
+
+//         // Convert vector to string
+//         for (int x : ans) {
+
+//             // Skip starting zeros
+//             if (!(result == "" && x == 0)) {
+//                 result = result + to_string(x);
+//             }
+//         }
+
+//         return result;
+//     }
+// };
+
+// int main() {
+
+//     Solution s;
+
+//     string num1 = "123";
+//     string num2 = "45";
+
+//     cout << s.multiply(num1, num2);
+
+//     return 0;
+// }
