@@ -1,34 +1,34 @@
-// #include <iostream>
-// using namespace std;
+#include <iostream>
+using namespace std;
 
-// class Solution {
-// public:
-//     int divide(int dividend, int divisor) {
+class Solution {
+public:
+    int divide(int dividend, int divisor) {
 
-//         int count = 0;
+        int count = 0;
 
-//         int sum = divisor;
+        int sum = divisor;
 
-//         // Keep adding divisor until it becomes greater
-//         while (sum <= dividend) {
+        // Keep adding divisor until it becomes greater
+        while (sum <= dividend) {
 
-//             sum = sum + divisor;
+            sum = sum + divisor;
 
-//             count++;
-//         }
+            count++;
+        }
 
-//         return count;
-//     }
-// };
+        return count;
+    }
+};
 
-// int main() {
+int main() {
 
-//     Solution s;
+    Solution s;
 
-//     int dividend = 10;
-//     int divisor = 2;
+    int dividend = 10;
+    int divisor = 2;
 
-//     cout << s.divide(dividend, divisor);
+    cout << s.divide(dividend, divisor);
 
-//     return 0;
-// }
+    return 0;
+}
